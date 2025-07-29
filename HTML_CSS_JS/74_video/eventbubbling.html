@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <span class="childcontainer">
+        <div class="child">I am a child</div>
+      </span>
+    </div>
+    <script>
+      const child = document.querySelector(".child");
+      const parent = document.querySelector(".container");
+      const childContainer = document.querySelector(".childcontainer");
+
+      child.addEventListener("click", (e) => {
+        console.log("Child clicked");
+        e.stopPropagation(); // Prevents the event from bubbling up to the parent
+      });
+
+      parent.addEventListener("click", () => {
+        console.log("Parent clicked");
+      });
+      childContainer.addEventListener("click", () => {
+        console.log("Child container clicked");
+        e.stopPropagation(); // Prevents the event from bubbling up to the parent
+      });
+    </script>
+  </body>
+</html>

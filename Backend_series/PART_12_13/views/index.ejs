@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-gray-900 text-white font-sans antialiased min-h-screen p-6 space-y-16"
+  >
+    <!-- Create Profile Section -->
+    <section
+      class="w-full max-w-md bg-gray-800/80 backdrop-blur-md p-8 rounded-2xl shadow-lg mx-auto"
+    >
+      <h1 class="text-3xl font-bold text-center text-blue-400 mb-6 drop-shadow">
+        Create Profile
+      </h1>
+      <form class="space-y-5" action="/create" method="POST">
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter your name"
+          required
+          class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+          class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="url"
+          name="image_url"
+          placeholder="Enter image URL"
+          required
+          class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <button
+          type="submit"
+          class="w-full py-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg font-semibold text-white"
+        >
+          Save Profile
+        </button>
+      </form>
+    </section>
+
+    <!-- All Users Section -->
+    <section class="w-full max-w-6xl mx-auto px-4">
+      <h2
+        class="text-4xl font-bold text-center text-blue-300 mb-10 drop-shadow"
+      >
+        All Users
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <% if (users && users.length > 0) { %> <% users.forEach(user => { %>
+        <div
+          class="bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-xl transition transform hover:scale-105 backdrop-blur"
+        >
+          <div class="flex items-center space-x-4 mb-4">
+            <img
+              src="<%= user.image_url %>"
+              alt="<%= user.name %>"
+              class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover"
+            />
+            <div>
+              <h3 class="text-xl font-semibold text-white"><%= user.name %></h3>
+              <p class="text-gray-400 text-sm"><%= user.email %></p>
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-center gap-4 mt-2 text-sm text-gray-300"
+          >
+            <a
+              href="/edit/<%= user._id %>"
+              class="text-yellow-400 hover:text-yellow-300 transition"
+              title="Edit"
+              >✏️</a
+            >
+            <a
+              href="/delete/<%= user._id %>"
+              class="text-red-500 hover:text-red-400 transition"
+              title="Delete"
+              >🚮</a
+            >
+          </div>
+        </div>
+        <% }); %> <% } else { %>
+        <div class="col-span-full text-center py-8">
+          <p class="text-gray-400 text-xl">No users found</p>
+        </div>
+        <% } %>
+      </div>
+    </section>
+  </body>
+</html>

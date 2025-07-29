@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= fileName %> - Task</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://img.icons8.com/cute-clipart/64/task.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </head>
+  <body class="bg-zinc-900 text-white font-sans">
+    <div
+      class="min-h-screen flex flex-col items-center justify-start px-4 py-10"
+    >
+      <!-- Task Detail Card -->
+      <div
+        class="w-full max-w-xl bg-zinc-800/90 backdrop-blur-md rounded-2xl p-6 shadow-[0_0_30px_rgba(0,0,0,0.4)]"
+      >
+        <h1 class="text-3xl font-semibold mb-4 text-center text-blue-400">
+          <%= fileName.replace('.txt', '') %>
+        </h1>
+        <div
+          class="text-white bg-zinc-700 p-5 rounded-xl whitespace-pre-wrap text-lg shadow-inner"
+        >
+          <%= fileContent %>
+        </div>
+        <div class="mt-6 text-center">
+          <a href="/" class="text-blue-400 hover:underline text-sm"
+            >&larr; Back to All Tasks</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

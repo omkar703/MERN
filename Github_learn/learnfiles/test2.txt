@@ -1,0 +1,9 @@
+check the git status -s 
+after that initialize it go into A  --> added 
+after that initialize it go into M  --> modified 
+after that initialize it go into C  --> commited 
+
+add a line for check the git branch 
+
+git stash add in draft 
+git added in the main 

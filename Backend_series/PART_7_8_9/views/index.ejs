@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Creator</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://img.icons8.com/cute-clipart/64/task.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Icon hover pulse */
+      .icon-hover:hover {
+        transform: scale(1.1);
+        transition: transform 0.2s ease;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-zinc-900 to-zinc-800 text-white font-sans"
+  >
+    <div class="min-h-screen flex flex-col items-center px-4 py-10">
+      <!-- Header -->
+      <h1
+        class="text-4xl font-bold text-center text-blue-400 drop-shadow mb-10"
+      >
+        📝 Task Creator
+      </h1>
+
+      <!-- Form Card -->
+      <div
+        class="w-full max-w-xl bg-zinc-800/90 backdrop-blur-md rounded-2xl p-6 shadow-[0_0_40px_rgba(0,0,0,0.4)]"
+      >
+        <h2 class="text-2xl font-semibold mb-6 text-center text-gray-100">
+          Create a New Task
+        </h2>
+        <form action="/create" method="POST">
+          <input
+            name="title"
+            class="block rounded-xl bg-zinc-700 text-white placeholder-gray-400 w-full px-5 py-3 mb-4 focus:ring-2 focus:ring-blue-500 focus:outline-none transition duration-200"
+            type="text"
+            placeholder="Title goes here"
+            required
+          />
+          <textarea
+            name="description"
+            class="block rounded-xl bg-zinc-700 text-white placeholder-gray-400 w-full px-5 py-3 mb-4 resize-none focus:ring-2 focus:ring-blue-500 focus:outline-none transition duration-200"
+            placeholder="Write your notes here"
+            rows="5"
+            required
+          ></textarea>
+          <input
+            class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-medium py-3 rounded-xl shadow-md transition duration-200 cursor-pointer"
+            type="submit"
+            value="Create Task"
+          />
+        </form>
+      </div>
+
+      <!-- Tasks Section -->
+      <div class="tasks w-full max-w-xl mt-12 space-y-4">
+        <% if (files.length > 0) { %> <% files.forEach(function(task) { %>
+        <article
+          class="bg-zinc-800/90 p-5 rounded-2xl shadow-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 hover:shadow-blue-700/30 transition"
+        >
+          <div>
+            <h3 class="text-xl font-semibold text-white">
+              <%= task.replace('.txt', '') %>
+            </h3>
+            <a
+              class="text-blue-400 text-sm hover:underline"
+              href="/file/<%= task %>"
+            >
+              View Description
+            </a>
+          </div>
+
+          <!-- Action Icons -->
+          <div class="flex gap-4 items-center mt-2 sm:mt-0">
+            <a
+              href="/edit/<%= task %>"
+              title="Edit"
+              class="text-yellow-400 hover:text-yellow-300 transition icon-hover text-xl"
+            >
+              ✏️
+            </a>
+            <form action="/delete/<%= task %>" method="POST">
+              <button
+                type="submit"
+                title="Delete"
+                class="text-red-400 hover:text-red-300 transition icon-hover text-xl"
+              >
+                🗑️
+              </button>
+            </form>
+          </div>
+        </article>
+        <% }) %> <% } else { %>
+        <h3 class="text-gray-500 text-center mt-4 italic">No tasks yet.</h3>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

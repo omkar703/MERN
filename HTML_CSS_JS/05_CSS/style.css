@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+main {
+  height: 100%;
+  width: 100%;
+  background-color: #d5ff40;
+}
+
+nav {
+  /* background-color: blue; */
+  padding: 60px 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .part2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+nav h2 {
+  font-size: 48px;
+}
+nav a {
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+}
+section {
+  /* background-color: red; */
+  padding: 60px 100px;
+  background-color: #d5ff40;
+}
+section .herotext1 {
+  /* background-color: red; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.herotext1 h1 {
+  font-size: 161px;
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 800;
+  line-height: 180px;
+}
+.herotext1 .video {
+  height: 125px;
+  width: 540px;
+  background-color: black;
+  border-radius: 100px;
+  margin-top: 10px;
+  background-image: url(https://images.unsplash.com/photo-1745774279526-cb89b4f4bf3b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfHFQWXNEenZKT1ljfHxlbnwwfHx8fHw%3D);
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+}
+section .herotext2 {
+  /* background-color: red; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.herotext2 h1 {
+  font-size: 161px;
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 800;
+  line-height: 180px;
+  padding: 5px;
+}
+.herotext2 p {
+  font-size: 31px;
+  width: 715px;
+  text-transform: uppercase;
+}
+.herotext1 .video .play {
+  height: 100%;
+  width: 100px;
+  background-color: #323950;
+  border-radius: 100px;
+  border: 4px solid #d18048;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play i {
+  color: #d5ff40;
+  font-size: 68px;
+}
+
+.image {
+  height: 900px;
+  width: 90%;
+  margin-left: 5%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  background-color: red;
+  background-image: url(https://plus.unsplash.com/premium_photo-1742502540752-e2b07ff0eeb2?q=80&w=2024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}

@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+.parent {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.child {
+  height: 200px;
+  width: 200px;
+  background-color: crimson;
+  border: 3px solid whitesmoke;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReCVZcMnD_O7SMfVADjj4dHylFJIKRnSgUnQ&s);
+  background-size: cover;
+  background-position: center;
+}
+#child1 {
+  background-position: top;
+}
+#child2 {
+  background-position: unset;
+}

@@ -1,0 +1,9 @@
+create a user account 
+    1.create a login pagemongoose
+    2.schema 
+    3.model
+    4.usercreate -> password encryption
+    5.jwt token -> cookie 
+
+
+login -> token -> decryption -> email 

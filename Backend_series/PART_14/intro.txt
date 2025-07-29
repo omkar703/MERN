@@ -1,0 +1,10 @@
+Authentication and Authorization
+
+Authentication is the process of verifying the identity of a user. Authorization is the process of granting or denying access to a user based on their identity and the level of access they need.
+
+authorized to perform some tasks which are only allowed to be executed by the admin 
+
+
+1 . cookie set by the server
+2 . bcrypt setting password encrytption and decryption
+3 . JWT token and how to store data in JWT

@@ -1,0 +1,13 @@
+Data Storage:--> where we store info database --> store all data files , img ,video etc
+Types of DBS --: SQL | NoSQL
+SQl -> in table form 
+NoSQL -> {} -> objects way --> NoSQL - mongodb , redis , elasticsearch
+what and why 
+tech- collections, documents , schemas , keys, models 
+
+----------------------------------------------------------------
+CODE                          DATABASE
+----------------------------------------------------------------
+mongoose.connect       ->    database created
+model create           ->    collection created
+CREATE code            ->    document created

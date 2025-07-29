@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function testpost() {
+        const response = await fetch("http://localhost:3000/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/text",
+          },
+        });
+        console.log(response);
+      }
+      testpost();
+    </script>
+  </body>
+</html>

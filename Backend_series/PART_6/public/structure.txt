@@ -1,0 +1,16 @@
+initialize the project npm 
+express install 
+dynamic routing --> only change the one part 
+                like /author/harsh
+                like /author/harsh/books
+                like /author/harsh/book1
+                like /author/harsh/book2
+                like /author/harsh/book3
+    dynamic routing in express 
+    how to get data comming form frountend
+    setting up parsers for form
+    setting up ejs for ejs pages 
+        setting up ejs
+        install ejs 
+        setup ejs as a view engine (ejs) = render -> view
+    seting up public folder

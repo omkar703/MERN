@@ -1,0 +1,5 @@
+git log --oneline -> give us the total checkpoints , commits and there id 
+//
+//
+git reset --hard HEAD~1 -> go back to one step or one checkpoint 
+//

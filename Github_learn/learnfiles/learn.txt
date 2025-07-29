@@ -1,0 +1,17 @@
+git config --global user.name "name"
+--> global name set
+git config --global user.email "email"
+--> global email set
+git config --global core.editor "code --wait"
+--> global editor set for code editor
+git config --global core.autocrlf true
+--> line endings set to true for mac and linux 
+
+
+: vscode git 
+U -> untracked files
+A -> added files or staged files
+M -> modified files
+C -> commited files
+
+new changes
